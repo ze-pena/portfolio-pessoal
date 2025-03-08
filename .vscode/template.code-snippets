@@ -1,0 +1,25 @@
+{
+  "component template": {
+    "scope": "javascriptreact, typescriptreact",
+    "prefix": "t-component",
+    "body": [
+      "// Styling",
+      "import './styles.scss'",
+      "\n// Typing",
+      "type Props = {$2}",
+      "\n// Component",
+      "export default ({$2}: Props): React.ReactElement => {",
+      "\treturn (",
+      "\t\t<div className=\"$1\">$3</div>",
+      "\t)",
+      "}",
+    ],
+    "description": "Creates a default React template",
+  },
+  "styles template": {
+    "scope": "sass",
+    "prefix": "t-style",
+    "body": ["// Component styling", ".$1", "\t$2"],
+    "description": "Creates a default Sass template",
+  },
+}
