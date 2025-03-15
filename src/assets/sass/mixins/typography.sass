@@ -1,0 +1,42 @@
+@function convert-to-rem($font, $default-size: 16)
+  @return calc($font / $default-size)
+
+  
+@mixin font-custom($min-size, $max-size, $align: left, $weight: 400, $font: 'Archivo', $color: #292524)
+  // Rem font sizes
+  $min-size-rem: convert-to-rem($min-size) + rem
+  $max-size-rem: convert-to-rem($max-size) + rem
+
+  // Line height sizes
+  $min-height-rem: convert-to-rem(calc($min-size * 1.5)) + rem
+  $max-height-rem: convert-to-rem(calc($max-size * 1.5)) + rem
+
+  // Screen width sizes
+  $min-screen-width: 340
+  $max-screen-width: 1920
+
+  // Fluid font size
+  $fluid-font-size: calc(convert-to-rem($max-size) - convert-to-rem($min-size))
+
+  // Fluid screen size
+  $fluid-screen-size: calc(convert-to-rem($max-screen-width) - convert-to-rem($min-screen-width))
+
+  // Fluid slope
+  $fluid-slope: calc($fluid-font-size / $fluid-screen-size)
+
+  // Fluid intersection
+  $fluid-intersection: calc(convert-to-rem($min-size) - ($fluid-slope * convert-to-rem($min-screen-width)))
+
+  // Preferred sizes
+  $slope-screen-width: calc($fluid-slope * 100) + vw
+
+  // Intersection sizes
+  $intersection-size-rem: $fluid-intersection + rem
+  $intersection-height-rem: calc($fluid-intersection * 1.5) + rem
+
+  font-family: $font, sans-serif
+  font-size: clamp($min-size-rem, calc($intersection-size-rem + $slope-screen-width), $max-size-rem)
+  font-weight: $weight
+  line-height: clamp($min-height-rem, calc($intersection-height-rem + $slope-screen-width), $max-height-rem)
+  text-align: $align
+  color: $color
