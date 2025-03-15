@@ -1,0 +1,89 @@
+@use "../../assets/sass/mixins/typography" as *
+@use "../../assets/sass/variables/colors" as *
+  
+.greetings
+  display: flex
+
+  &.--title
+    justify-content: center
+    padding: 24px 16px
+
+  &.--info
+    padding: 32px 16px
+
+  &__title
+    position: relative
+
+    & > h2
+      z-index: 1
+      font-family: "Fascinate", sans-serif
+      font-size: 4.5rem
+      font-weight: 800
+      text-transform: uppercase
+      letter-spacing: -4px
+      color: $primary-2
+
+    & > sub
+      z-index: 2
+      right: 0
+      bottom: 4px
+      position: absolute
+      font-family: "Forte", sans-serif
+      font-size: 1.25rem
+      font-weight: 600
+      color: #e6836c
+
+  &__about
+    flex-grow: 1
+    padding: 0 16px
+
+    &__content
+      display: flex
+      align-items: flex-start
+      gap: 32px
+      
+      & > img
+        min-width: 125px
+        max-height: 125px
+        border-radius: 50%
+        object-fit: cover
+        object-position: 50% 15%
+
+      & > p
+        flex-grow: 1
+        @include font-custom(14, 16, justify, 300, "Inter", $primary-2)
+
+
+  &__info
+    flex-grow: 1
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 16px
+
+    &__item
+      display: flex
+      flex-direction: column
+      min-width: 130px
+      padding: 4px 4px 0
+      border-radius: 8px
+      background-color: $primary-2
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+      &__icon
+        flex-grow: 1
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 24px 0 16px
+        font-size: 2.25rem
+        color: $primary-2
+        border-radius: 6px
+        background-color: $primary-1
+
+      &__label
+        @include font-custom(10, 12, center, 600, "Inter", $primary-1)
+        text-transform: uppercase
+        padding: 12px 0 6px
+
+  
