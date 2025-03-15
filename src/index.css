@@ -118,8 +118,13 @@ table {
 }
 
 ol,
-ul {
+ul,
+menu {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 *,
@@ -129,4 +134,42 @@ ul {
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  src: url(./assets/fonts/Archivo/archivo_variable_weight.ttf);
+  font-weight: 125 950;
+  font-stretch: 75% 125%;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  src: url(./assets/fonts/Inter/inter_variable_weight.ttf);
+  font-weight: 125 950;
+  font-stretch: 75% 125%;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  src: url(./assets/fonts/Outfit/outfit_variable_weight.ttf);
+  font-weight: 125 950;
+  font-stretch: 75% 125%;
+}
+
+@font-face {
+  font-family: 'Forte';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/Forte/forte_regular.ttf);
+}
+
+@font-face {
+  font-family: 'Fascinate';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/Fascinate/fascinate_regular.ttf);
 }
