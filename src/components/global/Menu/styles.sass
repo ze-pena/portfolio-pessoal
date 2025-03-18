@@ -1,0 +1,23 @@
+@use "../../../assets/sass/variables/bootstrap" as *
+@use "../../../assets/sass/mixins/typography" as *
+
+// Component styling
+.menu
+  flex-grow: 1
+  display: flex
+  justify-content: center
+  padding: 16px 24px
+
+  &__list
+    flex-grow: 1
+    display: flex
+    justify-content: center
+    gap: 24px
+    max-width: 500px
+
+    &__item
+      & > a
+        @include font-custom(14, 16, center, 400, 'Outfit', $color-secondary-1)
+
+        &:hover
+          color: $color-secondary-2
