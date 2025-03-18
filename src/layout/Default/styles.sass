@@ -1,5 +1,5 @@
-@use "../../assets/sass/variables/colors" as *
-  
+@use "../../assets/sass/variables/bootstrap" as *
+
 #root
   display: flex
   justify-content: center
@@ -11,8 +11,9 @@
   flex-grow: 1
   display: flex
   flex-direction: column
-  background-color: $primary-1
+  background: repeating-linear-gradient(45deg, $color-primary-3, $color-primary-3 5px, $color-primary-2 5px, $color-primary-2 20px)
   overflow: hidden auto
+  scroll-behavior: smooth
 
   &__header
     display: flex
@@ -20,4 +21,6 @@
   &__main
     flex-grow: 1
     display: flex
-    
+    flex-direction: column
+    align-items: stretch
+    gap: 48px

@@ -2,7 +2,7 @@
 import Header from '../../components/global/Header';
 
 // Header data
-import { headerData } from '../../data/header';
+import { menuData } from '../../data/menu';
 
 // Styling
 import './styles.sass';
@@ -15,7 +15,7 @@ function Default({ children }: Props) {
   return (
     <div className="default">
       <header className="default__header">
-        <Header data={headerData} />
+        <Header menuList={menuData.menuList} />
       </header>
 
       <main className="default__main">{children}</main>
