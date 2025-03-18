@@ -1,23 +1,27 @@
+// Componentes
+import About from '../../About';
+import Menu from '../Menu';
+
 // Styling
 import './styles.sass';
 
 // Typing
 interface Props {
-  data: { label: string; link: string }[];
+  menuList: { label: string; link: string }[];
 }
 
 // Component
-function Header({ data }: Props) {
+function Header(props: Props) {
   return (
-    <nav className="header">
-      <menu className="header__menu">
-        {data.map((item, index) => (
-          <li key={index} className="header__menu__item">
-            <a href={item.link}>{item.label}</a>
-          </li>
-        ))}
-      </menu>
-    </nav>
+    <div className="header">
+      <div className="header__content">
+        <About />
+      </div>
+
+      <div className="header__navigation">
+        <Menu menuList={props.menuList} />
+      </div>
+    </div>
   );
 }
 
