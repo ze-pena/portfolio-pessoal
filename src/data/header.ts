@@ -5,12 +5,12 @@ type Option = {
 };
 
 // Main types
-type Navigation = {
+export type Header = {
   menuList: Array<Option>;
 };
 
 // Main data
-const navigation: Navigation = {
+const header: Header = {
   menuList: [
     { label: 'Sobre', link: '#about' },
     { label: 'Experiência', link: '#experience' },
@@ -19,4 +19,4 @@ const navigation: Navigation = {
   ],
 };
 
-export { navigation };
+export { header };
