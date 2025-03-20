@@ -11,7 +11,7 @@ type Info = {
 };
 
 // Main types
-type About = {
+export type About = {
   contactList: Array<Contact>;
   infoList: Array<Info>;
 };
