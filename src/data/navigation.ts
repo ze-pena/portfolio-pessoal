@@ -1,13 +1,16 @@
-type MenuItem = {
+// Commom used types
+type Option = {
   label: string;
   link: string;
 };
 
-type MenuData = {
-  menuList: MenuItem[];
+// Main types
+type Navigation = {
+  menuList: Array<Option>;
 };
 
-const menuData: MenuData = {
+// Main data
+const navigation: Navigation = {
   menuList: [
     { label: 'Sobre', link: '#about' },
     { label: 'Experiência', link: '#experience' },
@@ -16,4 +19,4 @@ const menuData: MenuData = {
   ],
 };
 
-export { menuData };
+export { navigation };
