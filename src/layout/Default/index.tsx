@@ -1,8 +1,8 @@
 // Componentes
-import Header from '../../components/Elements/Header';
+import ElementHeader from '../../components/Elements/ElementHeader';
 
 // Component data
-import { navigation } from '../../data/navigation';
+import { header } from '../../data/header';
 
 // Styling
 import './styles.sass';
@@ -14,7 +14,7 @@ import './styles.sass';
 function Default(/* { children }: Props */) {
   return (
     <div className="default">
-      <Header data={navigation} />
+      <ElementHeader data={header} />
     </div>
   );
 }
