@@ -11,13 +11,13 @@ type Info = {
 };
 
 // Main types
-export type About = {
+export type AboutData = {
   contactList: Array<Contact>;
   infoList: Array<Info>;
 };
 
 // Main data
-const about: About = {
+const aboutData: AboutData = {
   contactList: [
     { label: 'Email', link: 'jose.pena.dev@gmail.com', type: 'mail' },
     { label: 'Whatsapp', link: '+5511942008326', type: 'phone' },
@@ -30,4 +30,4 @@ const about: About = {
   ],
 };
 
-export { about };
+export { aboutData };

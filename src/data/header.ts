@@ -5,12 +5,12 @@ type Option = {
 };
 
 // Main types
-export type Header = {
+export type HeaderData = {
   menuList: Array<Option>;
 };
 
 // Main data
-const header: Header = {
+const headerData: HeaderData = {
   menuList: [
     { label: 'Sobre', link: '#about' },
     { label: 'Experiência', link: '#experience' },
@@ -19,4 +19,4 @@ const header: Header = {
   ],
 };
 
-export { header };
+export { headerData };
