@@ -1,8 +1,11 @@
+// Providers
+import SettingsProvider from '../../context/Settings/provider';
+
 // Componentes
-import ElementHeader from '../../components/Elements/ElementHeader';
+import Header from '../../components/global/Header';
 
 // Component data
-import { header } from '../../data/header';
+import { headerData } from '../../data/header';
 
 // Styling
 import './styles.sass';
@@ -13,9 +16,11 @@ import './styles.sass';
 // Component
 function Default(/* { children }: Props */) {
   return (
-    <div className="default">
-      <ElementHeader data={header} />
-    </div>
+    <SettingsProvider>
+      <div className="default">
+        <Header data={headerData} />
+      </div>
+    </SettingsProvider>
   );
 }
 

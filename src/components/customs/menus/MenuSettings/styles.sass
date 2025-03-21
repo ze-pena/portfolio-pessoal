@@ -1,0 +1,86 @@
+@use "../../../../assets/sass/mixins/typography" as *
+@use "../../../../assets/sass/mixins/animations" as *
+
+// Component styling
+.menu-settings
+  display: flex
+  padding-left: 16px
+  gap: 8px
+
+  &__item
+    position: relative
+    flex-grow: 1
+    display: flex
+
+    &__button
+      z-index: 2
+      cursor: pointer
+      display: flex
+      align-items: center
+      gap: 8px
+      padding: 4px 8px
+      border-width: 2px
+      border-style: solid
+      border-color: transparent
+      border-radius: 4px
+      outline: none
+      background-color: #f9f9f9
+      transition: border-color 500ms ease, background-color 350ms linear
+
+      &:hover
+        border-color: #2d334a
+
+      &.--visible
+        background-color: #2d334a
+
+      &__icon
+        display: flex
+        align-items: center
+        justify-content: center
+        color: #2d334a
+        transition: color 250ms ease
+
+        &.--scheme
+          font-size: 1rem
+
+        &.--language
+          font-size: 1.65rem
+
+      &.--visible &__icon
+        color: #ffffff
+
+      &__label
+        min-width: 50px
+        @include font-custom(14, 18, left, 400, 'Outfit', #2d334a)
+        transition: color 250ms ease
+
+      &.--visible &__label
+        color: #ffffff
+
+    &__list
+      z-index: 1
+      position: absolute
+      right: 0
+      bottom: -2px
+      transform: translateY(100%)
+      border-radius: 6px 0 6px 6px
+      background-color: #2d334a
+      overflow: hidden
+      opacity: 0
+
+      &.--visible
+        @include animate-slide-down(1)
+
+      &.--invisible
+        @include animate-slide-down(2)
+
+      &__item
+        cursor: pointer
+        @include font-custom(12, 16, left, 400, 'Outfit', #ffffff)
+        padding: 6px 16px
+
+        &:hover
+          background-color: #485175
+
+        &:not(:last-child)
+          border-bottom: 2px solid #ffffff
