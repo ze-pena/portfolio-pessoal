@@ -1,0 +1,26 @@
+@use "../../../../assets/sass/mixins/typography" as *
+
+// Component styling
+.menu-list
+  flex-grow: 1
+  display: flex
+  align-items: center
+  gap: 16px
+
+  &__item
+    & > a
+      padding: 6px 8px
+      border-width: 2px
+      border-style: solid
+      border-color: transparent
+      border-radius: 4px
+      transition: color 250ms ease, border-color 500ms ease, background-color 350ms linear
+      @include font-custom(14, 18, center, 500, 'Outfit', #2d334a)
+
+      &:hover
+        border-color: #2d334a
+
+      &:focus
+        color: #ffffff
+        border-color: #2d334a
+        background-color: #2d334a
