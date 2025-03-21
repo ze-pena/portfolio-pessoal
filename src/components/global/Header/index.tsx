@@ -1,27 +1,52 @@
-// Componentes
-import About from '../../About';
-import Menu from '../Menu';
+// Components
+import MenuList from '../../customs/menus/MenuList';
+import MenuSettings from '../../customs/menus/MenuSettings';
+
+// Context
+import { useSettingsContext } from '../../../context/Settings/context';
+
+// Hooks
+import { useTranslation } from '../../../hooks/useTranslation';
+
+// Icon
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 // Styling
 import './styles.sass';
 
 // Typing
-interface Props {
-  menuList: { label: string; link: string }[];
-}
+import { HeaderData } from '../../../data/Header';
+
+type Props = {
+  data: Array<HeaderData>;
+};
 
 // Component
 function Header(props: Props) {
-  return (
-    <div className="header">
-      <div className="header__content">
-        <About />
-      </div>
+  const settingsContext = useSettingsContext();
+  const headerData = useTranslation(props.data, settingsContext.context.language);
 
-      <div className="header__navigation">
-        <Menu menuList={props.menuList} />
+  return (
+    <header className="header">
+      <div className="header__content">
+        <div className="header__content__actions">
+          <button type="button" className="header__content__actions__button">
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+        </div>
+
+        <div className="header__content__menu">
+          <nav className="header__content__menu__list">
+            <MenuList menuList={headerData.menuList} />
+          </nav>
+
+          <div className="header__content__menu__settings">
+            <MenuSettings menuSettings={headerData.menuSettings} />
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
   );
 }
 

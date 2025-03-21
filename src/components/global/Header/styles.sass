@@ -4,18 +4,64 @@
 .header
   flex-grow: 1
   display: flex
-  flex-direction: column
-  gap: 16px
-  height: 100vh
-  padding: 16px
+  justify-content: center
 
   &__content
     flex-grow: 1
     display: flex
+    max-width: 1040px
+    padding: 0 24px
 
-  &__navigation
-    display: flex
-    justify-content: flex-start
-    background-color: $color-primary-1
-    border-radius: 8px
-    box-shadow: $shadow-primary-1
+    &__actions
+      flex-basis: 40%
+      display: flex
+      align-items: center
+
+      &__button
+        cursor: pointer
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 6px 8px
+        border-width: 2px
+        border-style: solid
+        border-color: transparent
+        border-radius: 4px
+        font-size: 1rem
+        color: #2d334a
+        outline: none
+        background-color: #f9f9f9
+        transition: color 250ms ease, border-color 500ms ease, background-color 350ms linear
+
+        &:hover
+          border-color: #2d334a
+
+        &.--visible
+          color: #ffffff
+          background-color: #2d334a
+
+    &__menu
+      flex-basis: 60%
+      display: flex
+      gap: 32px
+      padding: 16px 0
+
+      &__list
+        flex-grow: 1
+        display: flex
+
+      &__settings
+        position: relative
+        display: flex
+        margin-left: auto
+
+        &::before
+          content: ""
+          position: absolute
+          top: 50%
+          left: 0
+          transform: translateY(-50%)
+          width: 2px
+          height: 50%
+          border-radius: 25%
+          background-color: #2d334a
