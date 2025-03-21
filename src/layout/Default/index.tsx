@@ -5,7 +5,7 @@ import SettingsProvider from '../../context/Settings/provider';
 import Header from '../../components/global/Header';
 
 // Component data
-import { headerData } from '../../data/header';
+import { headerData } from '../../data/Header';
 
 // Styling
 import './styles.sass';
