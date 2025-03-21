@@ -39,6 +39,7 @@
         align-items: center
         justify-content: center
         color: #2d334a
+        min-height: 28px
         transition: color 250ms ease
 
         &.--scheme
@@ -52,8 +53,8 @@
 
       &__label
         min-width: 50px
-        @include font-custom(14, 18, left, 400, 'Outfit', #2d334a)
         transition: color 250ms ease
+        @include font-custom(14, 18, left, 400, 'Outfit', #2d334a)
 
       &.--visible &__label
         color: #ffffff
@@ -77,8 +78,8 @@
 
       &__item
         cursor: pointer
-        @include font-custom(12, 16, left, 400, 'Outfit', #ffffff)
         padding: 6px 16px
+        @include font-custom(12, 16, left, 400, 'Outfit', #ffffff)
 
         &:hover
           background-color: #485175
