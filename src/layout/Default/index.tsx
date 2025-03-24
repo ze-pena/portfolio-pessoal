@@ -1,8 +1,11 @@
-// Providers
-import SettingsProvider from '../../context/Settings/provider';
-
 // Componentes
 import Header from '../../components/global/Header';
+
+// Context
+import { useSettingsContext } from '../../context/Settings/context';
+
+// Hooks
+import { useTranslation } from '../../hooks/useTranslation';
 
 // Component data
 import { headerData } from '../../data/Header';
@@ -10,17 +13,21 @@ import { headerData } from '../../data/Header';
 // Styling
 import './styles.sass';
 
-// Typing
-// type Props = React.PropsWithChildren
-
 // Component
-function Default(/* { children }: Props */) {
+function Default({ children }: React.PropsWithChildren) {
+  const settingsContext = useSettingsContext();
+  const header = useTranslation(headerData, settingsContext.context.language);
+
   return (
-    <SettingsProvider>
-      <div className="default">
-        <Header data={headerData} />
+    <div className="default">
+      <div className="default__header">
+        <Header data={header} />
       </div>
-    </SettingsProvider>
+
+      <div className="default__main">
+        <main className="default__main__content">{children}</main>
+      </div>
+    </div>
   );
 }
 
