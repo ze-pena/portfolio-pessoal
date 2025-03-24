@@ -23,3 +23,12 @@
     100%
       opacity: 0
       transform: translateY(-100%)
+
+@mixin animate-moving-background()
+  animation: moving-background 10s linear infinite
+
+  @keyframes moving-background
+    0%
+      background-position: 0 0
+    100%
+      background-position: 300px 300px
