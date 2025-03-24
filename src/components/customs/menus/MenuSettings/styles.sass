@@ -6,7 +6,6 @@
   display: flex
   align-items: center
   gap: 8px
-  padding-left: 16px
 
   &__item
     position: relative
@@ -35,11 +34,7 @@
         background-color: #2d334a
 
       &__icon
-        display: flex
-        align-items: center
-        justify-content: center
         color: #2d334a
-        min-height: 28px
         transition: color 250ms ease
 
         &.--scheme
@@ -52,9 +47,9 @@
         color: #ffffff
 
       &__label
-        min-width: 50px
+        min-width: 45px
         transition: color 250ms ease
-        @include font-custom(14, 18, left, 400, 'Outfit', #2d334a)
+        @include font-custom(14, 16, left, 500, 'Outfit', #2d334a)
 
       &.--visible &__label
         color: #ffffff
