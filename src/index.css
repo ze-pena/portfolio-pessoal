@@ -173,3 +173,10 @@ a {
   font-weight: 400;
   src: url(./assets/fonts/Fascinate/fascinate_regular.ttf);
 }
+
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/Pacifico/pacifico_regular.ttf);
+}
