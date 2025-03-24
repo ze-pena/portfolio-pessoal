@@ -5,12 +5,12 @@
   flex-grow: 1
   display: flex
   justify-content: center
+  padding: 0 24px
 
   &__content
     flex-grow: 1
     display: flex
     max-width: 1040px
-    padding: 0 24px
 
     &__actions
       flex-basis: 40%
@@ -21,7 +21,6 @@
         cursor: pointer
         display: flex
         align-items: center
-        justify-content: center
         padding: 6px 8px
         min-height: 28px
         border-width: 2px
@@ -44,25 +43,13 @@
     &__menu
       flex-basis: 60%
       display: flex
-      gap: 32px
+      justify-content: space-between
+      gap: 8px
       padding: 16px 0
 
       &__list
-        flex-grow: 1
         display: flex
 
       &__settings
         position: relative
         display: flex
-        margin-left: auto
-
-        &::before
-          content: ""
-          position: absolute
-          top: 50%
-          left: 0
-          transform: translateY(-50%)
-          width: 2px
-          height: 50%
-          border-radius: 25%
-          background-color: #2d334a

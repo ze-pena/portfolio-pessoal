@@ -2,12 +2,6 @@
 import MenuList from '../../customs/menus/MenuList';
 import MenuSettings from '../../customs/menus/MenuSettings';
 
-// Context
-import { useSettingsContext } from '../../../context/Settings/context';
-
-// Hooks
-import { useTranslation } from '../../../hooks/useTranslation';
-
 // Icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -19,14 +13,11 @@ import './styles.sass';
 import { HeaderData } from '../../../data/Header';
 
 type Props = {
-  data: Array<HeaderData>;
+  data: HeaderData;
 };
 
 // Component
 function Header(props: Props) {
-  const settingsContext = useSettingsContext();
-  const headerData = useTranslation(props.data, settingsContext.context.language);
-
   return (
     <header className="header">
       <div className="header__content">
@@ -38,11 +29,11 @@ function Header(props: Props) {
 
         <div className="header__content__menu">
           <nav className="header__content__menu__list">
-            <MenuList menuList={headerData.menuList} />
+            <MenuList menuList={props.data.menuList} />
           </nav>
 
           <div className="header__content__menu__settings">
-            <MenuSettings menuSettings={headerData.menuSettings} />
+            <MenuSettings menuSettings={props.data.menuSettings} />
           </div>
         </div>
       </div>
