@@ -1,0 +1,15 @@
+@use "../../../../assets/sass/mixins/typography" as *
+
+.card-skill
+  display: flex
+  justify-content: center
+  padding: 4px 8px
+  border-radius: 8px
+  background-color: #2d334a
+
+  &__icon
+    display: none
+
+  &__label
+    @include font-custom(12, 14, center, 300, "Outfit", #ffffff)
+    text-transform: capitalize
