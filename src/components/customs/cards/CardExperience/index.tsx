@@ -11,6 +11,8 @@ import './styles.sass';
 import CardSkill from '../CardSkill';
 
 // Typing
+type Skill = { label: string; value: string; tag: string };
+
 type Props = {
   company: 'alfa' | 'hiplatform' | 'procon';
   name: string;
@@ -18,7 +20,7 @@ type Props = {
   interval: string;
   description: string;
   model: 'presencial' | 'hibrido' | 'remoto';
-  skillList: Array<string>;
+  skillList: Array<Skill>;
 };
 
 // Component
@@ -50,7 +52,7 @@ function CardExperience(props: Props) {
 
           <ul className="card-experience__content__body__skill-list">
             {props.skillList.map((skillItem, index) => (
-              <CardSkill key={index} label={skillItem} />
+              <CardSkill key={index} {...skillItem} />
             ))}
           </ul>
 
