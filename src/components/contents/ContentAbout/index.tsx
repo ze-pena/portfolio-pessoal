@@ -16,7 +16,7 @@ type Props = { data: AboutData };
 // Component
 function ContentAbout(props: Props) {
   return (
-    <section className="content-about">
+    <section className="content-about" id="about">
       <div className="content-about__container">
         <div className="content-about__container__profile">
           <div className="content-about__container__profile__content">
