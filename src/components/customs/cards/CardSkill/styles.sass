@@ -1,0 +1,30 @@
+@use "../../../../assets/sass/variables/bootstrap" as *
+@use "../../../../assets/sass/mixins/typography" as *
+
+.card-skill
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 8px
+  padding: 8px 10px 8px
+  border-width: 2px
+  border-style: solid
+  border-radius: 6px
+
+  @each $name, $color in $brands
+    &.--brand-#{$name}
+      border-color: $color
+
+  &__icon
+    width: 16px
+    height: 16px
+    object-fit: contain
+    object-position: center
+
+  &__label
+    @include font-custom(12, 14, center, 400, "Outfit")
+    white-space: nowrap
+
+  @each $name, $color in $brands
+    &.--brand-#{$name} &__label
+      color: $color

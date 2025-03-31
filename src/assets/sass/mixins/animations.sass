@@ -1,0 +1,34 @@
+@mixin animate-slide-down($state: 1, $delay: 0)
+  @if $state == 1
+    animation: slide-down 400ms ease ($delay + ms) forwards
+  @if $state == 2
+    animation: slide-up 600ms ease ($delay + ms) forwards
+
+  @keyframes slide-down
+    0%
+      opacity: 0
+      transform: translateY(-100%)
+    50%
+      opacity: 0
+    100%
+      opacity: 1
+      transform: translateY(100%)
+
+  @keyframes slide-up
+    0%
+      opacity: 1
+      transform: translateY(100%)
+    25%
+      opacity: 0
+    100%
+      opacity: 0
+      transform: translateY(-100%)
+
+@mixin animate-moving-background()
+  animation: moving-background 10s linear infinite
+
+  @keyframes moving-background
+    0%
+      background-position: 0 0
+    100%
+      background-position: 300px 300px

@@ -1,0 +1,55 @@
+@use "../../../assets/sass/mixins/typography" as *
+@use "../../../assets/sass/variables/bootstrap" as *
+
+.header
+  flex-grow: 1
+  display: flex
+  justify-content: center
+  padding: 0 24px
+
+  &__content
+    flex-grow: 1
+    display: flex
+    max-width: 1040px
+
+    &__actions
+      flex-basis: 40%
+      display: flex
+      align-items: center
+
+      &__button
+        cursor: pointer
+        display: flex
+        align-items: center
+        padding: 6px 8px
+        min-height: 28px
+        border-width: 2px
+        border-style: solid
+        border-color: transparent
+        border-radius: 4px
+        font-size: 1rem
+        color: #2d334a
+        outline: none
+        background-color: transparent
+        transition: color 250ms ease, border-color 500ms ease, background-color 350ms linear
+
+        &:hover
+          border-color: #2d334a
+
+        &.--visible
+          color: #ffffff
+          background-color: #2d334a
+
+    &__menu
+      flex-basis: 60%
+      display: flex
+      justify-content: space-between
+      gap: 8px
+      padding: 16px 0
+
+      &__list
+        display: flex
+
+      &__settings
+        position: relative
+        display: flex

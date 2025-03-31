@@ -1,0 +1,20 @@
+@use "../../../../assets/sass/variables/bootstrap" as *
+@use "../../../../assets/sass/mixins/typography" as *
+
+// Component styling
+.card-info
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 12px
+  padding: 10px 12px 8px
+  border-radius: 8px
+  background-color: #2d334a
+  box-shadow: $shadow-primary-1
+
+  &__icon
+    font-size: 1rem
+    color: #ffffff
+
+  &__label
+    @include font-custom(10, 14, left, 300, "Outfit", #ffffff)

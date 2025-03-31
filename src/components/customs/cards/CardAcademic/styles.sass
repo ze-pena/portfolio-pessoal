@@ -1,0 +1,79 @@
+@use "../../../../assets/sass/variables/bootstrap" as *
+@use "../../../../assets/sass/mixins/typography" as *
+
+.card-academic
+  position: relative
+  display: flex
+  gap: 32px
+  padding: 32px 40px
+  border-radius: 8px
+  background-color: #ffffff
+  box-shadow: $shadow-primary-1
+
+  &:not(:last-of-type)::after
+    position: absolute
+    content: ""
+    width: 2px
+    height: 32px
+    background-color: #00000015
+    left: 50%
+    bottom: 0
+    transform: translate(-50%, 100%)
+
+  &__logo
+    display: flex
+    align-items: center
+    justify-content: center
+    min-width: 175px
+    max-width: 175px
+
+    img
+      width: 100%
+      object-fit: contain
+      object-position: center
+
+  &__content
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+    gap: 16px
+
+    &__header
+      display: flex
+      gap: 16px
+
+      &__company
+        flex-grow: 1
+        display: flex
+        flex-direction: column
+
+        h3
+          @include font-custom(18, 20, left, 600, "Outfit", #2d334a)
+
+        span
+          @include font-custom(14, 18, left, 300, "Outfit", #2d334a)
+
+      &__interval
+        span
+          @include font-custom(14, 16, left, 300, "Outfit", #2d334a)
+
+    &__body
+      flex-grow: 1
+      display: flex
+      flex-direction: column
+      gap: 16px
+
+      &__model-list
+        display: flex
+        gap: 8px
+
+      &__skill-list
+        display: flex
+        flex-wrap: wrap
+        gap: 8px
+
+      &__description
+        p
+          flex-grow: 1
+          margin-top: 16px
+          @include font-custom(16, 18, justify, 300, "Outfit", #2d334a)

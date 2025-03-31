@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// Components
+import Default from './layout/Default';
+import ContentAbout from './components/contents/ContentAbout';
+import ContentExperience from './components/contents/ContentExperience';
+import ContentAcademic from './components/contents/ContentAcademic';
+import ContentSkills from './components/contents/ContentSkills';
 
+// Component data
+import { aboutData } from './data/About';
+import { experienceData } from './data/Experience';
+import { academicData } from './data/Academic';
+import { skillData } from './data/Skills';
+
+// Context
+import { useSettingsContext } from './context/Settings/context';
+
+// Hooks
+import { useTranslation } from './hooks/useTranslation';
+
+// Component
 function App() {
-  const [count, setCount] = useState(0)
+  const settingsContext = useSettingsContext();
+  const about = useTranslation(aboutData, settingsContext.context.language);
+  const experience = useTranslation(experienceData, settingsContext.context.language);
+  const academic = useTranslation(academicData, settingsContext.context.language);
+  const skill = useTranslation(skillData, settingsContext.context.language);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Default>
+      <ContentAbout data={about} />
+      <ContentExperience data={experience} />
+      <ContentAcademic data={academic} />
+      <ContentSkills data={skill} />
+    </Default>
+  );
 }
 
-export default App
+export default App;
