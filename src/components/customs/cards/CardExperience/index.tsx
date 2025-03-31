@@ -11,7 +11,7 @@ import './styles.sass';
 import CardSkill from '../CardSkill';
 
 // Typing
-type Skill = { label: string; value: string; tag: string };
+type Skill = { label: string; value: string; tag: string; color: string };
 
 type Props = {
   company: 'alfa' | 'hiplatform' | 'procon';

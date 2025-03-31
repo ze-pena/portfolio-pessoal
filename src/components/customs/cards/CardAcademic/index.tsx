@@ -9,7 +9,7 @@ import logoUnicid from '../../../../assets/images/logos/logo_unicid.png';
 import './styles.sass';
 
 // Typing
-type Skill = { label: string; value: string; tag: string };
+type Skill = { label: string; value: string; tag: string; color: string };
 
 type Props = {
   college: 'unicid';
