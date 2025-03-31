@@ -6,6 +6,7 @@ type Props = {
   label: string;
   value: string;
   tag: string;
+  color: string;
 };
 
 // Component
@@ -15,7 +16,7 @@ function CardSkill(props: Props) {
       <img
         className="card-skill__icon"
         alt="Icone da habilidade"
-        src={`https://cdn.simpleicons.org/${props.value}?viewbox=auto`}
+        src={`https://cdn.simpleicons.org/${props.value}/${props.color}?viewbox=auto`}
       />
 
       <span className="card-skill__label">{props.label}</span>

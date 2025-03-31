@@ -23,6 +23,7 @@
 
   &__label
     @include font-custom(12, 14, center, 400, "Outfit")
+    white-space: nowrap
 
   @each $name, $color in $brands
     &.--brand-#{$name} &__label
