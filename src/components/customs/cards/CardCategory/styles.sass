@@ -1,0 +1,82 @@
+// Imports
+@use "../../../../assets/sass/variables/bootstrap" as *
+@use "../../../../assets/sass/mixins/typography" as *
+
+// Component styling
+.card-category
+  position: relative
+  flex-grow: 1
+  display: flex
+  flex-direction: column
+  gap: 16px
+  max-width: calc((100% / 2) - 24px)
+  padding: 24px 16px 24px
+  border-radius: 8px
+  background-color: #ffffff
+  box-shadow: $shadow-primary-1
+
+  @each $name, $color in $skills
+    &.--category-#{$name} &__title
+      position: relative
+
+      &::before
+        z-index: 1
+        top: 0
+        left: 0
+        position: absolute
+        content: ""
+        width: 4px
+        height: 100%
+        background-color: $color
+        transition: width 200ms ease, border-radius 100ms ease
+
+    &.--category-#{$name} &__title &__title__icon,
+    &.--category-#{$name} &__title &__title__text
+      z-index: 2
+      transition: color 200ms ease
+
+    &.--category-#{$name}:hover &__title::before
+      width: 100%
+      border-radius: 8px
+
+    &.--category-#{$name}:hover &__title &__title__icon,
+    &.--category-#{$name}:hover &__title &__title__text
+      color: #ffffff
+
+    &.--category-#{$name}:hover &__description
+      opacity: 1
+      color: $color
+
+  &__title
+    display: flex
+    align-items: center
+    gap: 16px
+    padding: 16px 24px 8px
+
+    &__icon
+      font-size: 1.75rem
+      color: #2d334a
+
+    &__text
+      @include font-custom(24, 32, left, 600, "Outfit", #2d334a)
+      text-transform: capitalize
+
+  &__description
+    position: absolute
+    top: 95px
+    left: 50%
+    transform: translateX(-50%)
+    opacity: 0
+    @include font-custom(14, 16, left, 300, "Outfit", #2d334a)
+    white-space: nowrap
+    transition: color 100ms ease, opacity 400ms linear
+
+  &__skills
+    flex-grow: 1
+    display: flex
+    flex-wrap: wrap
+    align-content: flex-start
+    justify-content: center
+    gap: 8px
+    padding: 24px 24px 0
+    background-color: #ffffff
