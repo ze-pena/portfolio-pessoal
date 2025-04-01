@@ -5,4 +5,14 @@ import react from '@vitejs/plugin-react-swc';
 export default defineConfig({
   plugins: [react()],
   base: '/portfolio-pessoal/',
+  resolve: {
+    alias: {
+      '@assets': '/src/assets',
+      '@components': '/src/components',
+      '@context': '/src/context',
+      '@data': '/src/data',
+      '@hooks': '/src/hooks',
+      '@layouts': '/src/layouts',
+    },
+  },
 });
