@@ -6,7 +6,7 @@ import ContentAcademic from '@components/contents/ContentAcademic';
 import ContentSkills from '@components/contents/ContentSkills';
 
 // Component data
-import { aboutData } from '@data/About';
+import { aboutData } from '@data/About1';
 import { experienceData } from '@data/Experience';
 import { academicData } from '@data/Academic';
 import { skillData } from '@data/Skills';
