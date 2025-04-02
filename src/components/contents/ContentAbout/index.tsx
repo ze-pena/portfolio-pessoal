@@ -9,7 +9,7 @@ import profilePicture from '@assets/images/profile_picture.jpg';
 import './styles.sass';
 
 // Typing
-import { AboutData } from '@data/About1';
+import { AboutData } from '@data/About';
 
 type Props = { data: AboutData };
 
