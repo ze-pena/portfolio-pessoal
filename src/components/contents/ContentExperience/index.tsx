@@ -1,11 +1,11 @@
 // Components
-import CardExperience from '../../customs/cards/CardExperience';
+import CardExperience from '@components/customs/cards/CardExperience';
 
 // Styling
 import './styles.sass';
 
 // Typing
-import { ExperienceData } from '../../../data/Experience';
+import { ExperienceData } from '@data/Experience';
 
 type Props = {
   data: ExperienceData;

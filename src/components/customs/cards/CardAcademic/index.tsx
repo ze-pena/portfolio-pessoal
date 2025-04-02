@@ -1,9 +1,9 @@
 // Components
-import CardModel from '../CardModel';
-import CardSkill from '../CardSkill';
+import CardModel from '@components/customs/cards/CardModel';
+import CardSkill from '@components/customs/cards/CardSkill';
 
 // Assets
-import logoUnicid from '../../../../assets/images/logos/logo_unicid.png';
+import logoUnicid from '@assets/images/logos/logo_unicid.png';
 
 // Styling
 import './styles.sass';

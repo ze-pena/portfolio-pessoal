@@ -6,7 +6,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 
 // Providers
-import SettingsProvider from './context/Settings/provider';
+import SettingsProvider from '@context/Settings/provider';
 
 // Styling
 import './index.css';

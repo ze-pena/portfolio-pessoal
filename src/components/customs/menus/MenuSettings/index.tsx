@@ -2,7 +2,7 @@
 import { useState, useMemo } from 'react';
 
 // Context
-import { useSettingsContext } from '../../../../context/Settings/context';
+import { useSettingsContext } from '@context/Settings/context';
 
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

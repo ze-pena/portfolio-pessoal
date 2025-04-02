@@ -1,5 +1,5 @@
 // Components
-import CardSkill from '../CardSkill';
+import CardSkill from '@components/customs/cards/CardSkill';
 
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
