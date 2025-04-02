@@ -2,19 +2,19 @@
 import { useRef } from 'react';
 
 // Componentes
-import Header from '../../components/global/Header';
+import Header from '@components/global/Header';
 
 // Hook
-import { useObserver } from '../../hooks/useObserver';
+import { useObserver } from '@hooks/useObserver';
 
 // Context
-import { useSettingsContext } from '../../context/Settings/context';
+import { useSettingsContext } from '@context/Settings/context';
 
 // Hooks
-import { useTranslation } from '../../hooks/useTranslation';
+import { useTranslation } from '@hooks/useTranslation';
 
 // Component data
-import { headerData } from '../../data/Header';
+import { headerData } from '@data/Header';
 
 // Styling
 import './styles.sass';

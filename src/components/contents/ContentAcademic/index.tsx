@@ -1,11 +1,11 @@
 // Components
-import CardAcademic from '../../customs/cards/CardAcademic';
+import CardAcademic from '@components/customs/cards/CardAcademic';
 
 // Styling
 import './styles.sass';
 
 // Typing
-import { AcademicData } from '../../../data/Academic';
+import { AcademicData } from '@data/Academic';
 
 type Props = {
   data: AcademicData;

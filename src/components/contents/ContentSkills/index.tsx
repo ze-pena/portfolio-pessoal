@@ -1,11 +1,11 @@
 // Components
-import CardCategory from '../../customs/cards/CardCategory';
+import CardCategory from '@components/customs/cards/CardCategory';
 
 // Styling
 import './styles.sass';
 
 // Typing
-import { SkillData } from '../../../data/Skills';
+import { SkillData } from '@data/Skills';
 
 type Props = {
   data: SkillData;

@@ -1,15 +1,15 @@
 // Components
-import InfoCard from '../../customs/cards/CardInfo';
-import ContactCard from '../../customs/cards/CardContact';
+import InfoCard from '@components/customs/cards/CardInfo';
+import ContactCard from '@components/customs/cards/CardContact';
 
 // Assets
-import profilePicture from '../../../assets/images/profile_picture.jpg';
+import profilePicture from '@assets/images/profile_picture.jpg';
 
 // Styling
 import './styles.sass';
 
 // Typing
-import { AboutData } from '../../../data/About';
+import { AboutData } from '@data/About';
 
 type Props = { data: AboutData };
 

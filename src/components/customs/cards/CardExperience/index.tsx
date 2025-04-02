@@ -1,14 +1,16 @@
 // Components
-import CardModel from '../CardModel';
+import CardModel from '@components/customs/cards/CardModel';
+import CardSkill from '@components/customs/cards/CardSkill';
 
 // Assets
-import logoAlfa from '../../../../assets/images/logos/logo_alfa.png';
-import logoHiplatform from '../../../../assets/images/logos/logo_hiplatform.webp';
-import logoProcon from '../../../../assets/images/logos/logo_procon.png';
+import logoAlfa from '@assets/images/logos/logo_alfa.png';
+import logoHiplatform from '@assets/images/logos/logo_hiplatform.webp';
+import logoProcon from '@assets/images/logos/logo_procon.png';
+
+const cardLogoList = [logoAlfa, logoHiplatform, logoProcon];
 
 // Styling
 import './styles.sass';
-import CardSkill from '../CardSkill';
 
 // Typing
 type Skill = { label: string; value: string; tag: string; color: string };
@@ -23,14 +25,18 @@ type Props = {
   skillList: Array<Skill>;
 };
 
+enum CardLogo {
+  'alfa',
+  'hiplatform',
+  'procon',
+}
+
 // Component
 function CardExperience(props: Props) {
   return (
     <li className="card-experience">
       <div className="card-experience__logo">
-        {props.company === 'alfa' && <img src={logoAlfa} alt="Logotipo da empresa" />}
-        {props.company === 'hiplatform' && <img src={logoHiplatform} alt="Logotipo da empresa" />}
-        {props.company === 'procon' && <img src={logoProcon} alt="Logotipo da empresa" />}
+        {<img src={cardLogoList[CardLogo[props.company]]} alt="Logotipo da empresa" />}
       </div>
 
       <div className="card-experience__content">

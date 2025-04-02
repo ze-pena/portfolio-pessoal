@@ -1,6 +1,6 @@
 // Components
-import MenuList from '../../customs/menus/MenuList';
-import MenuSettings from '../../customs/menus/MenuSettings';
+import MenuList from '@components/customs/menus/MenuList';
+import MenuSettings from '@components/customs/menus/MenuSettings';
 
 // Icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +10,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import './styles.sass';
 
 // Typing
-import { HeaderData } from '../../../data/Header';
+import { HeaderData } from '@data/Header';
 
 type Props = {
   data: HeaderData;
