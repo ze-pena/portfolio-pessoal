@@ -14,7 +14,7 @@ import { useSettingsContext } from '@context/Settings/context';
 import { useTranslation } from '@hooks/useTranslation';
 
 // Component data
-import { headerData } from '@data/Header1';
+import { headerData } from '@data/Header';
 
 // Styling
 import './styles.sass';
