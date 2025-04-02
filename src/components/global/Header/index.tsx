@@ -10,7 +10,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import './styles.sass';
 
 // Typing
-import { HeaderData } from '@data/Header';
+import { HeaderData } from '@data/Header1';
 
 type Props = {
   data: HeaderData;
