@@ -12,7 +12,7 @@ export default defineConfig({
       '@context': '/src/context',
       '@data': '/src/data',
       '@hooks': '/src/hooks',
-      '@layouts': '/src/layouts',
+      '@layout': '/src/layout',
     },
   },
 });
