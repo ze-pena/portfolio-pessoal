@@ -11,6 +11,9 @@
     flex-grow: 1
     display: flex
 
+    &:first-of-type
+      display: none
+
     &__button
       z-index: 2
       cursor: pointer
@@ -65,10 +68,10 @@
       opacity: 0
 
       &.--visible
-        @include animate-slide-down(1)
+        @include animate-slide-vertical(1)
 
       &.--invisible
-        @include animate-slide-down(2)
+        @include animate-slide-vertical(2)
 
       &__item
         cursor: pointer

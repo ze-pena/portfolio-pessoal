@@ -65,6 +65,7 @@ function MenuSettings(props: Props) {
           <div className="menu-settings__item__button__icon --scheme">
             <FontAwesomeIcon icon={faLightbulb} />
           </div>
+
           <span className="menu-settings__item__button__label">{settingsScheme}</span>
         </button>
       </li>
@@ -74,6 +75,7 @@ function MenuSettings(props: Props) {
           <div className="menu-settings__item__button__icon --language">
             <FontAwesomeIcon icon={faLanguage} />
           </div>
+
           <span className="menu-settings__item__button__label">{settingsContext.context.language}</span>
         </button>
 
