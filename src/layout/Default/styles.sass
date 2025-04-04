@@ -22,22 +22,14 @@
     left: 0
     opacity: 0
 
-  &__header
-    z-index: 2
-    position: sticky
-    top: 0px
-    display: flex
-    transition: background 200ms ease
-
-    &.--sticking
-      background: linear-gradient(180deg, #f9f9f9 50%, #f9f9f9bf 100%)
-
-  &__main
+  &__wrapper
     z-index: 1
+    position: relative
     flex-grow: 1
     display: flex
 
-    &__content
+    &__main
+      z-index: 1
       flex-grow: 1
       display: flex
       flex-direction: column
