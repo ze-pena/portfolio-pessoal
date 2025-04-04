@@ -2,10 +2,17 @@
 @use "../../../assets/sass/variables/bootstrap" as *
 
 .header
-  flex-grow: 1
+  z-index: 2
+  position: sticky
+  top: 0px
+  flex-basis: 75px
   display: flex
   justify-content: center
   padding: 0 8px
+  transition: background 200ms ease
+
+  &.--sticky
+    background: linear-gradient(180deg, #f9f9f9 50%, #f9f9f9bf 100%)
 
   @media (min-width: $phone-viewport-2)
     padding: 0 16px
@@ -48,7 +55,8 @@
         &:hover
           border-color: #2d334a
 
-        &.--visible
+        &.--visible,
+        &.--close
           color: #ffffff
           background-color: #2d334a
 
