@@ -23,7 +23,7 @@ export type HeaderData = {
 const headerData: Array<HeaderData> = [
   {
     menuList: [
-      { label: 'Sobre', link: '#about' },
+      { label: 'Sobre', link: '#start' },
       { label: 'Experiência', link: '#experience' },
       { label: 'Formação', link: '#academic' },
       { label: 'Habilidades', link: '#skills' },
@@ -35,7 +35,7 @@ const headerData: Array<HeaderData> = [
   },
   {
     menuList: [
-      { label: 'About', link: '#about' },
+      { label: 'About', link: '#start' },
       { label: 'Experience', link: '#experience' },
       { label: 'Academic', link: '#academic' },
       { label: 'Skills', link: '#skills' },
