@@ -4,14 +4,16 @@
 
 // Component styling
 .aside
+  pointer-events: none
   z-index: 2
-  position: absolute
+  position: fixed
   display: flex
   width: 100%
   height: 100%
   transition: background-color 300ms linear
 
   &.--visible
+    pointer-events: all
     background-color: #00000025
 
     @media(min-width: $tablet-viewport-3)
