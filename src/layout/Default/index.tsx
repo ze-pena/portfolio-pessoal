@@ -36,7 +36,7 @@ function Default({ children }: React.PropsWithChildren) {
       <div className="default__wrapper">
         <Aside data={header} tabOpen={settingsContext.context.aside} />
 
-        {/* <main className="default__wrapper__main">{children}</main> */}
+        <main className="default__wrapper__main">{children}</main>
       </div>
     </div>
   );
