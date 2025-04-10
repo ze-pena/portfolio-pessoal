@@ -1,4 +1,5 @@
 // Components
+import Section from '@components/composable/Section';
 import CardExperience from '@components/customs/cards/CardExperience';
 
 // Styling
@@ -14,21 +15,17 @@ type Props = {
 // Component
 function ContentExperience(props: Props) {
   return (
-    <section className="content-experience" id="experience">
-      <div className="content-experience__container">
-        <div className="content-experience__container__title">
-          <h2>{props.data.section.title}</h2>
-        </div>
+    <Section.Root id="experience">
+      <Section.Name title={props.data.section.title} />
 
-        <div className="content-experience__container__content">
-          <ul className="content-experience__container__content__experience">
-            {props.data.experienceList.map((experienceItem, index) => (
-              <CardExperience key={index} {...experienceItem} />
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
+      <Section.Container>
+        <ul className="content-experience">
+          {props.data.experienceList.map((experienceItem, index) => (
+            <CardExperience key={index} {...experienceItem} />
+          ))}
+        </ul>
+      </Section.Container>
+    </Section.Root>
   );
 }
 
