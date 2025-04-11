@@ -5,104 +5,115 @@
 .content-about
   flex-grow: 1
   display: flex
-  justify-content: center
-  padding: 0 24px
-  min-height: calc(100vh - 75px)
+  flex-wrap: wrap
+  gap: 0 24px
 
-  &__container
+  @media (min-width: $tablet-viewport-3)
+    flex-wrap: nowrap
+
+  &__profile
     flex-grow: 1
+    flex-basis: 40%
     display: flex
-    max-width: 1040px
-    padding: 16px 0 32px
+    align-items: center
+    justify-content: center
+    padding: 16px 8px
+    border-radius: 24px
+    background: url('../../../assets/images/background_pattern.jpg') 0% / 300px
+    @include animate-moving-background()
 
-    &__profile
-      flex-grow: 1
-      flex-basis: 40%
+    @media (min-width: $phone-viewport-2)
+      padding: 24px 16px
+
+    &__content
       display: flex
+      flex-direction: column
       align-items: center
-      justify-content: center
-      padding: 0 40px
-      border-radius: 24px
-      background: url('../../../assets/images/background_pattern.jpg') 0% / 300px
-      @include animate-moving-background()
+      gap: 16px
 
-      &__content
-        display: flex
-        flex-direction: column
-        align-items: center
-        justify-content: center
-        gap: 16px
+      &__picture
+        width: 100%
+        max-width: 215px
+        max-height: 215px
+        border-radius: 8px
+        object-fit: cover
+        object-position: 50% 20%
+        filter: grayscale(1)
+        box-shadow: $shadow-primary-1
 
-        &__picture
-          width: 100%
-          max-width: 215px
-          max-height: 215px
-          border-radius: 8px
-          object-fit: cover
-          object-position: 50% 20%
-          filter: grayscale(1)
-          box-shadow: $shadow-primary-1
-
-        &__about
-          flex-grow: 1
-          display: flex
-          flex-direction: column
-          gap: 8px
-
-          &__name
-            @include font-custom(24, 56, center, 400, "Pacifico", #2d334a)
-
-          &__role
-            @include font-custom(14, 16, center, 600, "Outfit", #2d334a)
-            margin-top: -8px
-
-          &__info
-            position: relative
-            flex-grow: 1
-            gap: 16px
-            display: flex
-            margin-top: 16px
-
-            &::before
-              position: absolute
-              top: -16px
-              left: 50%
-              transform: translateX(-50%)
-              content: ""
-              width: 80%
-              height: 2px
-              border-radius: 25%
-              background-color: #2d334a
-
-    &__message
-      flex-grow: 1
-      flex-basis: 60%
-      display: flex
-      padding: 0 56px
-
-      &__content
+      &__about
         flex-grow: 1
         display: flex
         flex-direction: column
-        justify-content: center
+        gap: 8px
+
+        &__name
+          @include font-custom(32, 56, center, 400, "Pacifico", #2d334a)
+
+        &__role
+          @include font-custom(14, 16, center, 600, "Outfit", #2d334a)
+          margin-top: -8px
+
+        &__info
+          position: relative
+          display: flex
+          flex-wrap: wrap
+          justify-content: center
+          gap: 8px 16px
+          margin-top: 16px
+
+          &::before
+            position: absolute
+            top: -16px
+            left: 50%
+            transform: translateX(-50%)
+            content: ""
+            width: 80%
+            height: 2px
+            border-radius: 25%
+            background-color: #2d334a
+
+  &__message
+    flex-grow: 1
+    flex-basis: 60%
+    display: flex
+    align-items: center
+
+    @media (min-width: $tablet-viewport-3)
+      padding: 0 40px
+
+    &__content
+      display: flex
+      flex-direction: column
+      gap: 16px
+
+      @media (min-width: $tablet-viewport-1)
         gap: 24px
 
-        &__title
-          @include font-custom(40, 72, center, 600, "Outfit", #2d334a)
+      &__title
+        display: none
+        @include font-custom(40, 72, center, 600, "Outfit", #2d334a)
 
-        &__subtitle
-          @include font-custom(16, 18, center, 300, "Outfit", #2d334a)
-          text-transform: uppercase
+        @media (min-width: $tablet-viewport-3)
+          display: block
 
-        &__body
-          @include font-custom(16, 20, justify, 300, "Outfit", #2d334a)
-          margin-top: 16px
-          white-space: break-spaces
+      &__subtitle
+        display: none
+        @include font-custom(16, 18, center, 300, "Outfit", #2d334a)
+        text-transform: uppercase
 
-        &__contact
-          align-self: center
-          display: flex
-          align-items: center
-          justify-content: center
-          gap: 12px
-          margin-top: 32px
+        @media (min-width: $tablet-viewport-3)
+          display: block
+
+      &__body
+        @include font-custom(14, 20, justify, 300, "Outfit", #2d334a)
+        white-space: break-spaces
+        margin: 16px 0
+
+      &__contact
+        display: flex
+        justify-content: center
+        gap: 10px
+
+        @media (min-width: $tablet-viewport-3)
+          gap: 16px

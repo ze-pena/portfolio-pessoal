@@ -3,6 +3,7 @@ import { useRef } from 'react';
 
 // Componentes
 import Header from '@components/global/Header';
+import Aside from '@components/global/Aside';
 
 // Hook
 import { useObserver } from '@hooks/useObserver';
@@ -28,14 +29,14 @@ function Default({ children }: React.PropsWithChildren) {
 
   return (
     <div className="default">
-      <div className="default__start-point" ref={startRef} />
+      <div id="start" className="default__start-point" ref={startRef} />
 
-      <nav className={`default__header --${!isObserved ? 'sticking' : 'fixed'}`}>
-        <Header data={header} />
-      </nav>
+      <Header data={header} position={isObserved ? 'fixed' : 'sticky'} />
 
-      <div className="default__main">
-        <main className="default__main__content">{children}</main>
+      <div className="default__wrapper">
+        <Aside data={header} tabOpen={settingsContext.context.aside} />
+
+        <main className="default__wrapper__main">{children}</main>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
-// Components
+// Components`
+import Section from '@components/composable/Section';
 import CardCategory from '@components/customs/cards/CardCategory';
 
 // Styling
@@ -14,21 +15,17 @@ type Props = {
 // Component
 function ContentSkills(props: Props) {
   return (
-    <section className="content-skills" id="skills">
-      <div className="content-skills__container">
-        <div className="content-skills__container__title">
-          <h2>{props.data.section.title}</h2>
-        </div>
+    <Section.Root id="skills" position="last">
+      <Section.Name title={props.data.section.title} />
 
-        <div className="content-skills__container__content">
-          <ul className="content-skills__container__content__experience">
-            {props.data.categoryList.map((categoryItem, index) => (
-              <CardCategory key={index} {...categoryItem} />
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
+      <Section.Container>
+        <ul className="content-skills">
+          {props.data.categoryList.map((categoryItem, index) => (
+            <CardCategory key={index} {...categoryItem} />
+          ))}
+        </ul>
+      </Section.Container>
+    </Section.Root>
   );
 }
 

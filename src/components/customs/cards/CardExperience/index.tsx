@@ -36,7 +36,7 @@ function CardExperience(props: Props) {
   return (
     <li className="card-experience">
       <div className="card-experience__logo">
-        {<img src={cardLogoList[CardLogo[props.company]]} alt="Logotipo da empresa" />}
+        <img src={cardLogoList[CardLogo[props.company]]} alt="Logotipo da empresa" />
       </div>
 
       <div className="card-experience__content">
@@ -49,6 +49,10 @@ function CardExperience(props: Props) {
           <div className="card-experience__content__header__interval">
             <span>{props.interval}</span>
           </div>
+        </div>
+
+        <div className="card-experience__content__logo">
+          <img src={cardLogoList[CardLogo[props.company]]} alt="Logotipo da empresa" />
         </div>
 
         <div className="card-experience__content__body">

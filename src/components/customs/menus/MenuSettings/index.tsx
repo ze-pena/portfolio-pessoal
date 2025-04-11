@@ -1,8 +1,11 @@
 // Dependencies
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
 
 // Context
 import { useSettingsContext } from '@context/Settings/context';
+
+// Hooks
+import { useStyleState } from '@hooks/useStyleState';
 
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,6 +19,8 @@ type Scheme = 'Light' | 'Dark' | 'Claro' | 'Escuro';
 
 type Language = 'pt-BR' | 'en-US';
 
+type MenuState = '--neutral' | '--visible' | '--invisible';
+
 type Settings = {
   schemeList: Array<Scheme>;
   languageList: Array<Language>;
@@ -28,12 +33,11 @@ type Props = {
 // Component
 function MenuSettings(props: Props) {
   const settingsContext = useSettingsContext();
-  const [showMenu, setShowMenu] = useState<boolean | null>(null);
 
-  const menuState = useMemo(() => {
-    if (showMenu === null) return '--neutral';
-    return showMenu ? '--visible' : '--invisible';
-  }, [showMenu]);
+  const { styleState, updateStyleState } = useStyleState<MenuState>(
+    { on: '--visible', off: '--invisible', default: '--neutral' },
+    1000
+  );
 
   const settingsScheme = useMemo(() => {
     const { schemeList } = props.menuSettings;
@@ -46,12 +50,12 @@ function MenuSettings(props: Props) {
     setContext(state => ({ ...state, scheme: context.scheme === 'light' ? 'dark' : 'light' }));
   };
 
-  const clickLanguage = () => setShowMenu(state => !state);
+  const clickLanguage = () => updateStyleState();
 
   const selectLanguage = (language: Language) => {
     const { setContext } = settingsContext;
     setContext(state => ({ ...state, language }));
-    setShowMenu(false);
+    clickLanguage();
   };
 
   return (
@@ -61,19 +65,21 @@ function MenuSettings(props: Props) {
           <div className="menu-settings__item__button__icon --scheme">
             <FontAwesomeIcon icon={faLightbulb} />
           </div>
+
           <span className="menu-settings__item__button__label">{settingsScheme}</span>
         </button>
       </li>
 
       <li className="menu-settings__item">
-        <button type="button" className={`menu-settings__item__button ${menuState}`} onClick={clickLanguage}>
+        <button type="button" className={`menu-settings__item__button ${styleState}`} onClick={clickLanguage}>
           <div className="menu-settings__item__button__icon --language">
             <FontAwesomeIcon icon={faLanguage} />
           </div>
+
           <span className="menu-settings__item__button__label">{settingsContext.context.language}</span>
         </button>
 
-        <ul className={`menu-settings__item__list ${menuState}`}>
+        <ul className={`menu-settings__item__list ${styleState}`}>
           {props.menuSettings.languageList.map((languageItem, index) => (
             <li className="menu-settings__item__list__item" key={index} onClick={() => selectLanguage(languageItem)}>
               {languageItem}

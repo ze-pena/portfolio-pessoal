@@ -1,0 +1,21 @@
+@use "../../../assets/sass/variables/bootstrap" as *
+@use "../../../assets/sass/mixins/typography" as *
+
+.name
+  align-self: stretch
+  display: flex
+  justify-content: center
+
+  &__container
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+    align-items: center
+    max-width: 1040px
+
+    @media (min-width: $tablet-viewport-1)
+      align-items: stretch
+
+    &__title
+      flex-grow: 1
+      @include font-custom(36, 56, left, 300, "Pacifico", #2d334a)

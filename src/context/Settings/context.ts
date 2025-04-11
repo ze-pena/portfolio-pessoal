@@ -5,6 +5,7 @@ import { createContext, useContext } from 'react';
 type ContextType = {
   scheme: 'light' | 'dark';
   language: 'pt-BR' | 'en-US';
+  aside: 'menu' | 'context' | 'none';
 };
 
 type ProviderType = {
@@ -14,7 +15,7 @@ type ProviderType = {
 
 // Mock
 export const providerData: ProviderType = {
-  context: { scheme: 'light', language: 'pt-BR' },
+  context: { scheme: 'light', language: 'pt-BR', aside: 'none' },
   setContext: () => {},
 };
 

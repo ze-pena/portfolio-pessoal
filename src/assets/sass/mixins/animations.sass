@@ -1,4 +1,4 @@
-@mixin animate-slide-down($state: 1, $delay: 0)
+@mixin animate-slide-vertical($state: 1, $delay: 0)
   @if $state == 1
     animation: slide-down 400ms ease ($delay + ms) forwards
   @if $state == 2
@@ -23,6 +23,34 @@
     100%
       opacity: 0
       transform: translateY(-100%)
+
+@mixin animate-slide-horizontal($state: 1, $delay: 0)
+  @if $state == 1
+    animation: slide-left 150ms linear ($delay + ms) forwards
+  @if $state == 2
+    animation: slide-right 150ms linear ($delay + ms) forwards
+
+  @keyframes slide-left
+    0%
+      opacity: 0
+      transform: translate(-100%)
+    10%
+      opacity: 1
+      transform: translateX(-100%)
+    100%
+      opacity: 1
+      transform: translateX(0)
+
+  @keyframes slide-right
+    0%
+      opacity: 1
+      transform: translateX(0)
+    90%
+      opacity: 1
+      transform: translateX(-100%)
+    100%
+      opacity: 0
+      transform: translateX(-100%)
 
 @mixin animate-moving-background()
   animation: moving-background 10s linear infinite

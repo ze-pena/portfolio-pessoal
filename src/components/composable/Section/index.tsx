@@ -1,9 +1,9 @@
 import Root from './Root';
 import Container from './Container';
-import Wrapper from './Wrapper';
+import Name from './Name';
 
 export default {
   Root,
   Container,
-  Wrapper,
+  Name,
 };
